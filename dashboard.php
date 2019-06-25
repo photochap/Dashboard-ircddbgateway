@@ -29,18 +29,18 @@ $MYCALL=strtoupper($configs['gatewayCallsign']);
 
 #These 2 numbers control the colour of the background for Repeaters, Links, etc
 
-$col[0] = "#cdc5c5";
+$col[0] = "#cccccc";
 
-$col[1] = "#919191";
+$col[1] = "#aaaaaa";
 
 ?>
 <?php echo "<meta name=\"GENERATOR\" content=\"$progname $rev\">";
 
     ?>
 
-      <table bgcolor="white" style= width:100%; border="0">
+      <table style= width:100%; border="0">
         <tbody>
-          <tr bgcolor="#0030ff">
+          <tr >
             <th width=25%>
            <H3>Location<H3>
             </a></th>
@@ -54,7 +54,7 @@ $col[1] = "#919191";
             <H3>APRS-Host</H3>
             </a></th>
           </tr>
-          <tr bgcolor="#cdc5c5">
+          <tr >
 <?php print "<td>$configs[description1]\n$configs[description2]</td>\n";
 
       print "<td>$configs[latitude]\n$configs[longitude]</td>\n";
@@ -67,9 +67,9 @@ $col[1] = "#919191";
           </tr>
         </tbody>
       </table>
-      <table bgcolor="white" style= width:100%; border="0">
+      <table style= width:100%; border="0">
         <tbody>
-          <tr bgcolor="#0030ff">
+          <tr >
             <th width=14%>
             <H3>DCS</H3></a></th>
             <th width=14%>
@@ -90,7 +90,7 @@ $col[1] = "#919191";
             <H3>Log</H3>
             </a></th>
           </tr>
-          <tr bgcolor="white">
+          <tr >
 <?php if($configs['dcsEnabled'] == 1){print "<td width=40><img src=\"images/20green.png\"</td>"; } else { print "<td width=40><img src=\"images/20red.png\"</td>"; }
 
       if($configs['dextraEnabled'] == 1){print "<td width=40><img src=\"images/20green.png\"</td>"; } else { print "<td width=40><img src=\"images/20red.png\"</td>"; }
@@ -110,9 +110,9 @@ $col[1] = "#919191";
         </tbody>
       </table>
       <H4>Repeaters:</H4>  
-      <table bgcolor="white" style= width:100%; border="0">
+      <table style= width:100%; border="0">
         <tbody>
-          <tr bgcolor="#0030ff">
+          <tr >
             <th width=14%>
             <H3>Repeater</H3>
             </a></th>
@@ -214,9 +214,9 @@ Reconnect</H3>
         </tbody>
       </table>
       <H4>Links:</H4> 
-      <table bgcolor="white" style= width:100%; border="0">
+      <table style= width:100%; border="0">
         <tbody>
-          <tr bgcolor="#0030ff">
+          <tr >
             <th width=16%>
             <H3>Repeater</H3>
             </a></th>
@@ -375,11 +375,11 @@ Reconnect</H3>
 ?>
         </tbody>
       </table>
-      <H4>Last 5 calls heard on <?php echo "$MYCALL" ?> :</H4>
+      <H4>Last 20 calls heard on <?php echo "$MYCALL" ?> :</H4>
        
-      <table bgcolor="white" style= width:100%; border="0">
+      <table style= width:100%; border="0">
         <tbody>
-          <tr bgcolor="#0030ff">
+          <tr >
             <th width=16%>
             <H3>Date &amp; Time (UTC)</H3>
             </a></th>
@@ -413,7 +413,7 @@ Reconnect</H3>
 
 //
 
-    exec('(grep -v "  /TIME" '.$hdrLogPath.'|sort -r -k7,7|sort -u -k7,8|sort -r|head -5 >/tmp/lastheard.log) 2>&1 &');
+    exec('(grep -v "  /TIME" '.$hdrLogPath.'|sort -r -k7,7|sort -u -k7,8|sort -r|head -20 >/tmp/lastheard.log) 2>&1 &');
 
     $ci = 0;
 
@@ -468,9 +468,9 @@ Reconnect</H3>
       </table>
       <H4>Last calls that used <?php echo "$MYCALL" ?> :</H4>
        
-      <table bgcolor="white" style= width:100%; border="0">
+      <table style= width:100%; border="0">
         <tbody>
-          <tr bgcolor="#0030ff">
+          <tr >
             <th width=16%>
             <H3>Date &amp; Time (UTC)</H3>
             </a></th>
